@@ -1,60 +1,85 @@
-/* ===== Basic Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  line-height: 1.5;
-  color: #222;
-  background-color: #f9f9f9;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-/* ===== Header ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f5f5f5;
+}
+
 header {
   background-color: #1e1e1e;
   color: #fff;
   padding: 1rem 2rem;
+
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
 header h1 {
-  margin-bottom: 0.5rem;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #f39c12;
 }
 
-/* ===== Main Sections ===== */
+#about {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#about p {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
 main {
-  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   scroll-margin-top: 140px;
 }
 
@@ -63,9 +88,9 @@ section h2 {
   border-bottom: 2px solid #f39c12;
   display: inline-block;
   padding-bottom: 0.2rem;
+  font-size: 2rem;
 }
 
-/* ===== Gallery Styling (smaller images: 1/5 size) ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -74,18 +99,24 @@ section h2 {
 
 figure {
   background: #fff;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 figure img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 figcaption {
@@ -101,32 +132,122 @@ hr {
   margin: 2rem 0;
 }
 
-/* ===== Contact Section ===== */
+
+#contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#contact p {
+  margin-bottom: 1rem;
+}
+
 #contact a {
   color: #f39c12;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #contact a:hover {
   text-decoration: underline;
 }
 
-/* ===== Footer ===== */
 footer {
   background-color: #1e1e1e;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
 }
+
+footer p {
+  margin: 0;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.modal-title {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-image {
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.modal button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.modal-close {
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+}
+
+.modal-prev {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.modal-next {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
 
 /* ===== Responsive Styling ===== */
 @media(max-width:600px){
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
   header h1 {
     font-size: 1.5rem;
   }
 
   nav ul {
     flex-direction: column;
+    gap: 0.7rem;
+  }
+
+    #about {
+    padding: 3rem 1rem;
+  }
+
+  #about h2 {
+    font-size: 2rem;
   }
 
   section h2 {
@@ -138,7 +259,28 @@ footer {
   }
 
   figure img {
-    width: 50%; /* slightly larger on small screens */
+    width: 100%; 
+    height: 220px;
+  }
+
+  .modal-image {
+    max-width: 90vw;
+    max-height: 75vh;
+  }
+
+  .modal-prev {
+    left: 10px;
+    font-size: 2rem;
+  }
+
+  .modal-next {
+    right: 10px;
+    font-size: 2rem;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
   }
 }
-/* End of styles.css */
