@@ -1,19 +1,12 @@
-            export default function About()  {
-    return (
-        <>
-            <section id="cover-design">
-                <h2>Cover Design</h2>
-                <div className="gallery">
-                <figure>
-                    <img src="Cover-crow.png" alt="Book cover design illustration"/>
-                    <figcaption>Cover Design</figcaption>
-                </figure>
-                <figure>
-                    <img src="Character-farmer.jpeg" alt="Book cover design illustration of a forest"/>
-                    <figcaption>Cover Design</figcaption>
-                </figure>
-                </div>
-            </section>
-        </>
-    )
-}      
+import Gallery from '../components/Gallery';
+import { coverDesigns } from "../data/coverDesign";
+
+export default function CoverDesign()  {
+    return ( 
+        <section id="cover-designs">
+            <h2>Cover Designs</h2>
+
+            <Gallery items={coverDesigns} />
+        </section>
+    );
+}

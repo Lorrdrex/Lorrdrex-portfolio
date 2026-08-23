@@ -14,14 +14,9 @@ import ghoulWarrior from "../assets/images/Ghoul-warrior.png"
 import mechaSoldier from "../assets/images/Mecha-soldier.png"
 import theWarrior from "../assets/images/The-warrior.png"
 
-export interface GalleryItem {
-  id: number;
-  title: string;
-  image: string;
-  alt: string;
-}
+import type { GalleryItem } from "./types";
 
-export const characterDesigns = [
+export const characterDesigns: GalleryItem[] = [
     {
         id: 1,
         title: "Character 1",

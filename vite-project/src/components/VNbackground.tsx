@@ -1,28 +1,12 @@
-export default function About()  {
-    return (
-        <>
-            <section id="V.N-background">
-                    <h2>V.N Background</h2>
-                    <div className="gallery">
-                    <figure>
-                        <img src="morale-city.jpg" alt="A design of the the inner city of morale"/>
-                        <figcaption>V.N Background Design</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="Classroom-background.jpg" alt="A design of the classroom"/>
-                        <figcaption>V.N Background Design 2</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="classroom-background2.jpg" alt="A design of the classroom2"/>
-                        <figcaption>V.N Background Design 3</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="Room-background.jpg" alt="A design of a room"/>
-                        <figcaption>V.N Background Design 4</figcaption>
-                    </figure>
-                    </div>
-                </section> 
-        </>
-    )
-}                  
-        
+import Gallery from '../components/Gallery';
+import { vnBackgrounds } from "../data/vnBackgrounds";
+
+export default function VNbackgrounds()  {
+    return ( 
+        <section id="vn-backgrounds">
+            <h2>VN Backgrounds</h2>
+
+            <Gallery items={vnBackgrounds} />
+        </section>
+    );
+}

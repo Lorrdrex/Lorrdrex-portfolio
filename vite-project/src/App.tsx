@@ -1,5 +1,4 @@
 import './index.css'
-import './App.css'
 import About from './components/About'
 import Header from './components/Header'
 import CharacterDesign from './components/CharacterDesign'
@@ -10,21 +9,24 @@ import MapDesign from './components/MapDesign'
 import MedievalArts from './components/MedievalArts'
 import CoverDesign from './components/CoverDesign'
 import VNbackground from './components/VNbackground'
-import './assets/images'
 
 export default function App() {
-    return (
-        <>
-            <Header />
-            <About />
-            <CharacterDesign />
-            <CoverDesign />
-            <Illustrations />
-            <MapDesign />
-            <MedievalArts />
-            <VNbackground />
-            <Contact />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+
+      <main>
+        <About />
+        <CharacterDesign />
+        <CoverDesign />
+        <Illustrations />
+        <MapDesign />
+        <MedievalArts />
+        <VNbackground />
+        <Contact />
+      </main>
+
+      <Footer />
+    </>
+  );
 }
